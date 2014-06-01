@@ -1,6 +1,12 @@
 <h1><%= @recipes[0]["name"] %></h1><br>
 <p class = "description"><b>DESCRIPTION</b><br><%= @recipes[0]["description"] %></p><br>
 
-<p class = "ingredients"><b>INGREDIENTS</b><br><%= @recipes[0]["description"] %></p><br>
+<p class = "ingredients"><b>INGREDIENTS</b><br>
+<ul>
+<% @recipes[1].each do |ingredient| %>
+<li><%= ingredient["name"] %></li>
+<% end %>
+</ul>
+</p><br>
 
 <p class = "instructions"><b>INSTRUCTIONS</b><br><%= @recipes[0]["instructions"] %></p>

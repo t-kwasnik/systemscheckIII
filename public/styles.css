@@ -1,0 +1,34 @@
+body {
+  margin: 0px auto;
+  width: 90%;
+}
+
+.header {
+  padding: 10px;
+  background: gray;
+  font-family: Copperplate;
+  font-size: 25pt;
+  color:white;
+  width: 90%;
+}
+
+.body {
+  font-family: Helvetica;
+  display: block;
+  width: 90%;
+
+}
+
+a {
+  text-decoration: none;
+  font-size: 18pt;
+  color:gray;
+}
+
+a:hover {
+  color: red;
+}
+
+li {
+  list-style: none;
+}

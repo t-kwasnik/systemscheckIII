@@ -7,8 +7,11 @@ def get_recipe(id)
     result = connection.exec('SELECT id, name FROM recipes ORDER BY name;').to_a
   else
     result = connection.exec_params('SELECT id, name, instructions, description FROM recipes WHERE id = $1;', [id]).to_a
+    ingredients = connection.exec_params('SELECT id, name FROM ingredients WHERE recipe_id = $1;', [id]).to_a
+    result << ingredients
   end
 end
+
 
 
 
@@ -19,6 +22,5 @@ end
 
 get "/recipes/:id" do
   @recipes = get_recipe(params[:id])
-  @ingredients = get_ingredients(params[:id])
   erb :recipe
 end
